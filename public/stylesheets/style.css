@@ -3,14 +3,17 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.bg-forest-green{
+  background-color: #46834d;
 }
 
-.text-azure-blue {
-  color: #0078D4
+.bg-light-forest-green {
+  color: #83b889
 }
 
-.bg-azure-light-gray {
-  background-color: #EBEBEB;
+select{
+  height:300px;
+  max-width:20vw;
+  overflow:scroll;
+  overflow-y:scroll;
 }
