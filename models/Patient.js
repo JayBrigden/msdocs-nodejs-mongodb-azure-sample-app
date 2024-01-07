@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
-const PatientRecordSchema = new mongoose.Schema({
+const PatientSchema = new mongoose.Schema({
     PatientID: String, 
     PatientName: String, 
     DateOfBirth: Date, 
     MedicalHistory: [String],
     CurrentMedication: [String],
     EmergencyContact1Name: String,
-    EmergencyContact1PhoneNo: Number,
+    EmergencyContact1PhoneNo: String,
     EmergencyContact1Relation: String,
     EmergencyContact2Name: String,
-    EmergencyContact2PhoneNo: Number, 
+    EmergencyContact2PhoneNo: String, 
     EmergencyContact2Relation: String
 });
 
-module.exports = mongoose.model('PatientRecords', PatientRecordSchema); 
+module.exports = mongoose.model('PatientModel', PatientSchema); 
