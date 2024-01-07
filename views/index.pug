@@ -5,6 +5,7 @@ html
     link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/js/bootstrap.min.js')
+    script(src='/scripts/script.js')
   body 
     main(class='container' style='max-width:1000px')
       div(class='d-flex align-items-center p-3 bg-forest-green rounded shadow-sm')
@@ -57,25 +58,3 @@ html
           div(class='p-1')
             label(for='patientContact2RelationInput' class='mx-1') Emergency Contact 2 Relation 
             input(id='patientContact2RelationInput')
-          script.
-            var $selectBox = document.getElementById('selectBox');
-
-            var getSelectedRecord = function() {
-              var selectBoxSelectedId = $selectBox.options[$selectBox.selectedIndex].id;
-              return !{PatientRecords}.find(record => record.PatientID == selectBoxSelectedId);
-            }
-
-            $selectBox.addEventListener('change', function(event) {
-              currentRecord = getSelectedRecord();
-              document.getElementById('patientIdInput').value = currentRecord.PatientID;
-              document.getElementById('patientNameInput').value = currentRecord.PatientName;
-              document.getElementById('patientDobInput').value = currentRecord.DateOfBirth;
-              document.getElementById('patientHistoryInput').value = currentRecord.MedicalHistory;
-              document.getElementById('patientMedicationInput').value = currentRecord.CurrentMedication;
-              document.getElementById('patientContact1NameInput').value = currentRecord.EmergencyContact1Name;
-              document.getElementById('patientContact1PhoneInput').value = currentRecord.EmergencyContact1PhoneNo;
-              document.getElementById('patientContact1RelationInput').value = currentRecord.EmergencyContact1Relation;
-              document.getElementById('patientContact2NameInput').value = currentRecord.EmergencyContact2Name;
-              document.getElementById('patientContact2PhoneInput').value = currentRecord.EmergencyContact2PhoneNo;
-              document.getElementById('patientContact2RelationInput').value = currentRecord.EmergencyContact2Relation;
-            });
