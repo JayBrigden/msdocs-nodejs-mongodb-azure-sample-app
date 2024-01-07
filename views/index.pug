@@ -4,7 +4,7 @@ html
     Title Healthway Hospital Records
     link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
- 
+    script(src='/js/bootstrap.min.js')
   body 
     main(class='container' style='max-width:1000px')
       div(class='d-flex align-items-center p-3 bg-forest-green rounded shadow-sm')
@@ -24,4 +24,5 @@ html
           option one 
           option two
         div(Class='col p-2 mx-1 border rounded shadow-sm' style='height:300px;')
-          p test
+          each PatRecord in PatRecords
+            p #{PatRecord.PatientName}

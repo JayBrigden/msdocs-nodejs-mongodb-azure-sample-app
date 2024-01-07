@@ -16,4 +16,4 @@ const BillingInsuranceSchema = new mongoose.Schema({
     PaymentStatus: String,
 
 });
-module.export = mongoose.model('BillingInsurance',BillingInsuranceSchema);
+module.export = mongoose.model('BillingRecords',BillingInsuranceSchema);

@@ -10,4 +10,4 @@ const AppointmentSchema = new mongoose.schema({
     Notes: String
 });
 
-module.export = mongoose.model('Appointment', AppointmentSchema);
+module.export = mongoose.model('AppointmentRecords', AppointmentSchema);
