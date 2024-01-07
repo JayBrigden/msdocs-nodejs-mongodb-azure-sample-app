@@ -14,4 +14,4 @@ const PatientRecordSchema = new mongoose.Schema({
     EmergencyContact2Relation: String
 });
 
-module.export = mongoose.model('PatientRecords', PatientRecordSchema); 
+module.exports = mongoose.model('PatientRecords', PatientRecordSchema); 
