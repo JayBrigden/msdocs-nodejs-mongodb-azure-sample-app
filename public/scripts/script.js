@@ -1,13 +1,11 @@
 var $selectBox = document.getElementById('selectBox');
-console.log('test');
 
 var getSelectedRecord = function() {
     var selectBoxSelectedId = $selectBox.options[$selectBox.selectedIndex].id;
-    return !{PatientRecords}.find(record => record.PatientID == selectBoxSelectedId);
+    return PatientRecords.find(record => record.PatientID == selectBoxSelectedId);
 }
 
 $selectBox.addEventListener('change', function(event) {
-    console.log('test2');
     currentRecord = getSelectedRecord();
     document.getElementById('patientIdInput').value = currentRecord.PatientID;
     document.getElementById('patientNameInput').value = currentRecord.PatientName;
