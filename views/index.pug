@@ -11,7 +11,7 @@ html
         div(class='col 1h-1')
          h1(class='h3 mb-0 text-white lh-1') healthway Hospital Records
         div(class='col-md-auto 1h-1')
-         small(class='text-white') Dr.Brigden
+         small(class='text-white') Dr. Brigden
       div(class='d-flex align-items-center my-1 bg-light-forest-green rounded shadow-sm')
         div(class='col-md-auto px-2')
           p(class='my-3 text-white') Patients
@@ -20,9 +20,60 @@ html
         div(class='col-md-auto px-2')
           p(class='my-3 text-white') Inventory
       div(class='d-flex my-2')
-        select(class='col p-2 mx-1 form select shadow-sm' multiple)
-          option one 
-          option two
-        div(Class='col p-2 mx-1 border rounded shadow-sm' style='height:300px;')
+        select(id='selectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
           each PatientRecord in PatientRecords
-            p #{PatientRecord.PatientName}
+           option #{PatientRecord.PatientName}
+        div(Class='col p-2 mx-1 border rounded shadow-sm' style='height:300px;')
+          div(class='p-1')
+            label(for='patientIdInput' class='mx-1') Patient ID 
+            input(id='patientIdInput')
+          div(class='p-1')
+            label(for='patientNameInput' class='mx-1') Patient Name
+            input(id='patientNameInput')
+          div(class='p-1')
+            label(for='patientDobInput' class='mx-1') Date of Birth 
+            input(id='patientDobInput' type='date')
+          div(class='p-1')
+            label(for='patientHistoryInput' class='mx-1') Medical History 
+            textarea(id='patientHistoryInput' rows='3')
+          div(class='p-1')
+            label(for='patientMedicationInput' class='mx-1') Current Medication 
+            textarea(id='patientMedicationInput' rows='3')
+          div(class='p-1')
+            label(for='patientContact1NameInput' class='mx-1') Emergency Contact 1 Name 
+            input(id='patientContact1NameInput')
+          div(class='p-1')
+            label(for='patientContact1PhoneInput' class='mx-1') Emergency Contact 1 Phone No.
+            input(id='patientContact1PhoneInput')
+          div(class='p-1')
+            label(for='patientContact1RelationInput' class='mx-1') Emergency Contact 1 Relation 
+            input(id='patientContact1RelationInput')
+          div(class='p-1')
+            label(for='patientContact2NameInput' class='mx-1') Emergency Contact 2 Name 
+            input(id='patientContact2NameInput')
+          div(class='p-1')
+            label(for='patientContact2PhoneInput' class='mx-1') Emergency Contact 2 Phone No.
+            input(id='patientContact2PhoneInput')
+          div(class='p-1')
+            label(for='patientContact2RelationInput' class='mx-1') Emergency Contact 2 Relation 
+            input(id='patientContact2RelationInput')
+          script.
+            var $selectBox = document.getElementById('selectBox');
+
+            var getSelected = function() {
+              return PatientRecords.filter(PatientRecord => PatientRecord.PatientName == $selectBox.options[$selectBox.selectedIndex].text);
+            };
+
+            $selectBox.addEventListener('change', function(event) {
+              document.getElementById('patientIdInput').value = getSelected().PatientID;
+              document.getElementById('patientNameInput').value = getSelected().PatientName;
+              document.getElementById('patientDobInput').value = getSelected().DateOfBirth;
+              document.getElementById('patientHistoryInput').value = getSelected().MedicalHistory;
+              document.getElementById('patientMedicationInput').value = getSelected().CurrentMedication;
+              document.getElementById('patientContact1NameInput').value = getSelected().EmergencyContact1Name;
+              document.getElementById('patientContact1PhoneInput').value = getSelected().EmergencyContact1PhoneNo;
+              document.getElementById('patientContact1RelationInput').value = getSelected().EmergencyContact1Relation;
+              document.getElementById('patientContact2NameInput').value = getSelected().EmergencyContact2Name;
+              document.getElementById('patientContact2PhoneInput').value = getSelected().EmergencyContact2PhoneNo;
+              document.getElementById('patientContact2RelationInput').value = getSelected().EmergencyContact2Relation;
+            });
