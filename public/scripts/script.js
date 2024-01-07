@@ -2,6 +2,7 @@ var $selectBox = document.getElementById('selectBox');
 
 var getSelectedRecord = function() {
     var selectBoxSelectedId = $selectBox.options[$selectBox.selectedIndex].id;
+    var PatientRecords = document.getElementById('PatientRecords').id;
     return PatientRecords.find(record => record.PatientID == selectBoxSelectedId);
 }
 

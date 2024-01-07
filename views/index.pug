@@ -19,6 +19,7 @@ html
         div(class='col-md-auto px-2')
           p(class='my-3 text-white') Inventory
       div(class='d-flex my-2')
+        input(id='PatientRecords' type='hidden') !{PatientRecords}
         select(id='selectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
           each PatientRecord in PatientRecords
            option(id=PatientRecord.PatientID) #{PatientRecord.PatientName}
@@ -56,8 +57,6 @@ html
           div(class='p-1')
             label(for='patientContact2RelationInput' class='mx-1') Emergency Contact 2 Relation 
             input(id='patientContact2RelationInput')
-          script.
-            var PatientRecords = !{PatientRecords};
 
     script(src='/js/bootstrap.min.js')
     script(src='/scripts/script.js')
