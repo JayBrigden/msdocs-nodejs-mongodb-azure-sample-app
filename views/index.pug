@@ -22,7 +22,7 @@ html
       div(class='d-flex my-2')
         select(id='selectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
           each PatientRecord in PatientRecords
-           option(id=#{PatientRecord.PatientID}) #{PatientRecord.PatientName}
+           option(id='#{PatientRecord.PatientID'}) #{PatientRecord.PatientName}
         div(Class='col p-2 mx-1 border rounded shadow-sm' style='height:300px;')
           div(class='p-1')
             label(for='patientIdInput' class='mx-1') Patient ID 
