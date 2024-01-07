@@ -1,13 +1,7 @@
 var $selectBox = document.getElementById('selectBox');
 
-var getSelectedRecord = function() {
-    var selectBoxSelectedId = $selectBox.options[$selectBox.selectedIndex].id;
-    var PatientRecords = document.getElementById('PatientRecords').value;
-    return PatientRecords.find(record => record.PatientID == selectBoxSelectedId);
-}
-
 $selectBox.addEventListener('change', function(event) {
-    currentRecord = getSelectedRecord();
+    var currentRecord = $selectBox.option[$selectBox.selectedIndex].data-record;
     document.getElementById('patientIdInput').value = currentRecord.PatientID;
     document.getElementById('patientNameInput').value = currentRecord.PatientName;
     document.getElementById('patientDobInput').value = currentRecord.DateOfBirth;

@@ -19,10 +19,9 @@ html
         div(class='col-md-auto px-2')
           p(class='my-3 text-white') Inventory
       div(class='d-flex my-2')
-        input(id='PatientRecords' type='hidden') !{PatientRecords}
         select(id='selectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
           each PatientRecord in PatientRecords
-           option(id=PatientRecord.PatientID) #{PatientRecord.PatientName}
+           option(id=PatientRecord.PatientID data-record=PatientRecord) #{PatientRecord.PatientName}
         div(Class='col p-2 mx-1 border rounded shadow-sm' style='height:300px;')
           div(class='p-1')
             label(for='patientIdInput' class='mx-1') Patient ID 
