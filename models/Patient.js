@@ -14,4 +14,4 @@ const PatientSchema = new mongoose.Schema({
     EmergencyContact2Relation: String
 });
 
-module.exports = mongoose.model('PatientModel', PatientSchema); 
+module.exports = mongoose.model('Patient', PatientSchema); 

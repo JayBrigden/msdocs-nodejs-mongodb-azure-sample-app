@@ -1,15 +1,15 @@
 var express = require('express');
-var PatientModel = require('../models/Patient');
+var Patient = require('../models/Patient');
 
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  PatientModel.find()
-    .then((PatientRecords) => {
-      const AllPatientRecords = PatientRecords;
+  Patient.find()
+    .then((patients) => {
+      const PatientRecords = patients;
 
-      res.render('index', { AllPatientRecords: AllPatientRecords });
+      res.render('index', { PatientRecords: PatientRecords });
     })
     .catch((err) => {
       console.log(err);
