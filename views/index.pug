@@ -9,7 +9,7 @@ html
     main(class='container' style='max-width:1000px')
       div(class='d-flex align-items-center p-3 bg-forest-green rounded shadow-sm')
         div(class='col 1h-1')
-         h1(class='h3 mb-0 text-white lh-1') healthway Hospital Records
+         h1(class='h3 mb-0 text-white lh-1') Healthway Hospital Records
         div(class='col-md-auto 1h-1')
          small(class='text-white') Dr. Brigden
       div(class='d-flex align-items-center my-1 bg-light-forest-green rounded shadow-sm')
@@ -60,20 +60,20 @@ html
           script.
             var $selectBox = document.getElementById('selectBox');
 
-            var getSelected = function() {
-              return PatientRecords.filter(PatientRecord => PatientRecord.PatientName == $selectBox.options[$selectBox.selectedIndex].text);
-            };
-
             $selectBox.addEventListener('change', function(event) {
-              document.getElementById('patientIdInput').value = getSelected().PatientID;
-              document.getElementById('patientNameInput').value = getSelected().PatientName;
-              document.getElementById('patientDobInput').value = getSelected().DateOfBirth;
-              document.getElementById('patientHistoryInput').value = getSelected().MedicalHistory;
-              document.getElementById('patientMedicationInput').value = getSelected().CurrentMedication;
-              document.getElementById('patientContact1NameInput').value = getSelected().EmergencyContact1Name;
-              document.getElementById('patientContact1PhoneInput').value = getSelected().EmergencyContact1PhoneNo;
-              document.getElementById('patientContact1RelationInput').value = getSelected().EmergencyContact1Relation;
-              document.getElementById('patientContact2NameInput').value = getSelected().EmergencyContact2Name;
-              document.getElementById('patientContact2PhoneInput').value = getSelected().EmergencyContact2PhoneNo;
-              document.getElementById('patientContact2RelationInput').value = getSelected().EmergencyContact2Relation;
+              var selectBoxSelected = $selectBox.options[$selectBox.selectedIndex].text;
+              var records = !{PatientRecords};
+              var records2 = #{PatientRecords};
+
+              document.getElementById('patientIdInput').value = #{currentRecord.PatientID};
+              document.getElementById('patientNameInput').value = #{currentRecord.PatientName};
+              document.getElementById('patientDobInput').value = #{currentRecord.DateOfBirth};
+              document.getElementById('patientHistoryInput').value = #{currentRecord.MedicalHistory};
+              document.getElementById('patientMedicationInput').value = #{currentRecord.CurrentMedication};
+              document.getElementById('patientContact1NameInput').value = #{currentRecord.EmergencyContact1Name};
+              document.getElementById('patientContact1PhoneInput').value = #{currentRecord.EmergencyContact1PhoneNo};
+              document.getElementById('patientContact1RelationInput').value = #{currentRecord.EmergencyContact1Relation};
+              document.getElementById('patientContact2NameInput').value = #{currentRecord.EmergencyContact2Name};
+              document.getElementById('patientContact2PhoneInput').value = #{currentRecord.EmergencyContact2PhoneNo};
+              document.getElementById('patientContact2RelationInput').value = #{currentRecord.EmergencyContact2Relation};
             });
