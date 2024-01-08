@@ -1,4 +1,12 @@
 var appointmentSelectBox = document.getElementById('appointmentSelectBox');
+const appointmentPurposeData = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+        for (var i = 0; i < appointmentSelectBox.length; i++){
+                appointmentPurposeData.push(JSON.parse(appointmentSelectBox.options[i].dataset.record).Purpose);
+        }
+        console.log(appointmentPurposeData);
+    }, false);
 
 appointmentSelectBox.addEventListener('change', function(event) {
         var currentAppointmentRecord = JSON.parse(appointmentSelectBox.options[appointmentSelectBox.selectedIndex].dataset.record);
