@@ -6,16 +6,8 @@ appointmentSelectBox.addEventListener('change', function(event) {
         document.getElementById('appointmentPatientIdInput').value = currentAppointmentRecord.PatientID;
         document.getElementById('appointmentPatientNameInput').value = currentAppointmentRecord.PatientName;
         document.getElementById('appointmentDoctorIdInput').value = currentAppointmentRecord.DoctorID;
-        document.getElementById('appointmentDateInput').value = new Date(currentAppointmentRecord.AppointmentDate);
+        document.getElementById('appointmentDateInput').value = currentAppointmentRecord.AppointmentDate.slice(0,9);
         document.getElementById('appointmentTimeInput').value = currentAppointmentRecord.Time;
         document.getElementById('appointmentPurposeInput').value = currentAppointmentRecord.Purpose;
         document.getElementById('appointmentNotesInput').value = currentAppointmentRecord.Notes;
 });
-
-    // Copy code above
-    // replace currentpatientrecord -- currentappointmentrecord 
-    // make the appointment & inventory button interactive
-            // make new sheet 
-            //show correct data
-    // Fix Collection naming 
-            // Billing, Inventories, Appintments

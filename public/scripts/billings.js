@@ -5,6 +5,7 @@ billingSelectBox.addEventListener('change', function(event) {
     document.getElementById('billingIdInput').value = currentbillingRecord.BillingID;
     document.getElementById('billingPatientIdInput').value = currentbillingRecord.PatientID;
     document.getElementById('billingPatientNameInput').value = currentbillingRecord.PatientName;
+    document.getElementById('billingDateInput').value = currentbillingRecord.Date.slice(0,9);
     document.getElementById('billingItemisedCostInput').value = currentbillingRecord.ItemisedCost;
     document.getElementById('billingTotalValueInput').value = currentbillingRecord.TotalValue;
     document.getElementById('billingProviderInput').value = currentbillingRecord.InsuranceProvider;
