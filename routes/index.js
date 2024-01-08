@@ -3,11 +3,11 @@ var Patient = require('../models/Patient');
 
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/patients', function(req, res, next) {
   Patient.find()
     .then((patients) => {
 
-      res.render('index', { PatientRecords: patients });
+      res.render('patients', { PatientRecords: patients });
     })
     .catch((err) => {
       console.log(err);

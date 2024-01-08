@@ -1,0 +1,44 @@
+extends index 
+
+block content
+
+div(class='d-flex my-2')
+        select(id='patientSelectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
+          each PatientRecord in PatientRecords
+           option(data-record=PatientRecord) #{PatientRecord.PatientName}
+        div(class='col p-2 mx-1 border rounded shadow-sm')
+          div(class='p-1')
+            label(for='patientIdInput' class='mx-1') Patient ID 
+            input(id='patientIdInput')
+          div(class='p-1')
+            label(for='patientNameInput' class='mx-1') Patient Name
+            input(id='patientNameInput')
+          div(class='p-1')
+            label(for='patientDobInput' class='mx-1') Date of Birth 
+            input(id='patientDobInput' type='date')
+          div(class='p-1')
+            label(for='patientHistoryInput' class='mx-1') Medical History 
+            textarea(id='patientHistoryInput' rows='3')
+          div(class='p-1')
+            label(for='patientMedicationInput' class='mx-1') Current Medication 
+            textarea(id='patientMedicationInput' rows='3')
+          div(class='p-1')
+            label(for='patientContact1NameInput' class='mx-1') Emergency Contact 1 Name 
+            input(id='patientContact1NameInput')
+          div(class='p-1')
+            label(for='patientContact1PhoneInput' class='mx-1') Emergency Contact 1 Phone No.
+            input(id='patientContact1PhoneInput')
+          div(class='p-1')
+            label(for='patientContact1RelationInput' class='mx-1') Emergency Contact 1 Relation 
+            input(id='patientContact1RelationInput')
+          div(class='p-1')
+            label(for='patientContact2NameInput' class='mx-1') Emergency Contact 2 Name 
+            input(id='patientContact2NameInput')
+          div(class='p-1')
+            label(for='patientContact2PhoneInput' class='mx-1') Emergency Contact 2 Phone No.
+            input(id='patientContact2PhoneInput')
+          div(class='p-1')
+            label(for='patientContact2RelationInput' class='mx-1') Emergency Contact 2 Relation 
+            input(id='patientContact2RelationInput')
+        
+script(src='/scripts/patients.js')

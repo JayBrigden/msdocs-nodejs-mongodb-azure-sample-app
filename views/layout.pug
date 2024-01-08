@@ -1,17 +1,26 @@
-doctype html
-html
-  head
-    title= title
+doctype html 
+html 
+  Head
+    Title Healthway Hospital Records
     link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body(class='p-2')
+  body 
+    main(class='container' style='max-width:1000px')
+      div(class='d-flex align-items-center p-3 bg-forest-green rounded shadow-sm')
+        div(class='col 1h-1')
+         h1(class='h3 mb-0 text-white lh-1') Healthway Hospital Records
+        div(class='col-md-auto 1h-1')
+         small(class='text-white') Dr. Brigden
+      div(class='d-flex align-items-center my-1 px-2 bg-light-forest-green rounded shadow-sm')
+        div(class='col-md-auto')
+          button(id='patientBtn' class='py-2') Patients
+        div(class='col-md-auto')
+            button(id='appointmentBtn' class='py-2') Appointments
+        div(class='col-md-auto')
+            button(id='inventoryBtn' class='py-2') Inventory
+        div(class='col-md-auto')
+            button(id='billingBtn' class='py-2') Billing
 
-    main(class='container' style='max-width: 720px')
-        div(class='d-flex align-items-center p-3 my-1 bg-azure-light-gray rounded shadow-sm')
-            div(class='1h-1')
-                h1(class='h3 mb-0 text-azure-blue lh-1') Healthway Hospital
-
-        block content
+      block content
     script(src='/js/bootstrap.min.js')
-
-
+    script(src='/scripts/script.js')
