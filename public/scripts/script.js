@@ -3,7 +3,7 @@ const appointmentBtn = document.getElementById('appointmentBtn');
 const inventoryBtn = document.getElementById('inventoryBtn');
 const billingBtn = document.getElementById('billingBtn');
 var patientSelectBox = document.getElementById('patientSelectBox');
-var appointmentSelectBox = document.getElementById('appointmentSelectBox');
+//var appointmentSelectBox = document.getElementById('appointmentSelectBox');
 
 patientBtn.addEventListener('click', function onClick() {
     patientBtn.style.backgroundColor = 'rgb(70, 131, 77)';
@@ -48,7 +48,7 @@ patientSelectBox.addEventListener('change', function(event) {
     document.getElementById('patientContact2RelationInput').value = currentPatientRecord.EmergencyContact2Relation;
 });
 
-appointmentSelectBox.addEventListener('change', function(event) {
+/*appointmentSelectBox.addEventListener('change', function(event) {
         var currentAppointmentRecord = JSON.parse(appointmentSelectBox.options[appointmentSelectBox.selectedIndex].dataset.record);
         document.getElementById('appointmentIdInput').value = currentAppointmentRecord.AppointmentID;
         document.getElementById('appointmentPatientIdInput').value = currentAppointmentRecord.PatientID;
@@ -59,7 +59,7 @@ appointmentSelectBox.addEventListener('change', function(event) {
         document.getElementById('appointmentPurposeInput').value = currentAppointmentRecord.Purpose;
         document.getElementById('appointmentNotesInput').value = currentAppointmentRecord.Notes;
 
-});
+});*/
 
     // Copy code above
     // replace currentpatientrecord -- currentappointmentrecord 
