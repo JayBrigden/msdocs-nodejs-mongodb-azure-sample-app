@@ -2,12 +2,10 @@ const mongoose = require('mongoose');
 
 const InventorySchema = new mongoose.Schema({
     InventoryID: String, 
-    InventoryName: Sting,
+    InventoryName: String,
     Quantity: String,
-    SupplierDetails: {
-        Name: String, 
-        ContactDetails: String
-    }, 
+    SupplierName: String,
+    SupplierContact: String,
     ExpirationDate: Date
 });
 

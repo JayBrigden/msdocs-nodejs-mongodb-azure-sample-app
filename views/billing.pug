@@ -1,6 +1,38 @@
 extends index 
 
 block content
-    
-    each BillingRecord in BillingRecords
-        p #{BillingRecord.BillingID}
+
+    div(class='d-flex my-2')
+        select(id='billingSelectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
+          each BillingRecord in BillingRecords
+           option(data-record=BillingRecord) #{BillingRecord.PatientName}
+        div(class='col p-2 mx-1 border rounded shadow-sm')
+          div(class='p-1')
+            label(for='billingIdInput' class='mx-1') Billing ID 
+            input(id='billingIdInput')
+          div(class='p-1')
+            label(for='billingPatientIdInput' class='mx-1') Patient ID
+            input(id='billingPatientIdInput')
+          div(class='p-1')
+            label(for='billingPatientNameInput' class='mx-1') Patient Name 
+            input(id='billingPatientNameInput')
+          div(class='p-1')
+            label(for='billingDateInput' class='mx-1') Date 
+            input(id='billingDateInput' type='date')
+          div(class='p-1')
+            label(for='billingItemisedCostInput' class='mx-1') Itemised Cost 
+            textarea(id='billingItemisedCostInput' rows='3')
+          div(class='p-1')
+            label(for='billingTotalValueInput' class='mx-1') Total Value
+            input(id='billingTotalValueInput')
+          div(class='p-1')
+            label(for='billingProviderInput' class='mx-1') Insurance Provider 
+            input(id='billingProviderInput')
+          div(class='p-1')
+            label(for='billingProviderIdInput' class='mx-1') Insurance Provider ID 
+            input(id='billingProviderIdInput')
+          div(class='p-1')
+            label(for='billingPaymentStatusInput' class='mx-1') Payment Status
+            input(id='billingPaymentStatusInput')
+        
+    script(src='/scripts/billings.js')
