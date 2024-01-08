@@ -3,6 +3,10 @@ var Patient = require('../models/Patient');
 
 var router = express.Router();
 
+router.get('/', function(req, res) {
+  res.send('hello world');
+});
+
 router.get('/patients', function(req, res, next) {
   Patient.find()
     .then((patients) => {
