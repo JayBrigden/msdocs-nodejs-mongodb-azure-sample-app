@@ -4,7 +4,7 @@ var Patient = require('../models/Patient');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  Promise.all(Patient.find())
+  Patient.find()
     .then((patients) => {
 
       res.render('index', { PatientRecords: patients });
