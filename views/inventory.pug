@@ -5,10 +5,10 @@ block content
     div(class='d-flex my-2')
         select(id='inventorySelectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
           each InventoryRecord in InventoryRecords
-           option(data-record=inventoryRecord) #{inventoryRecord.PatientName}
+           option(data-record=InventoryRecord) #{InventoryRecord.PatientName}
         div(class='col p-2 mx-1 border rounded shadow-sm')
           div(class='p-1')
-            label(for='inventoryIdInput' class='mx-1') Inventory ID 
+            label(for='inventoryIdInput' class='mx-1' disabled='disabled') Inventory ID 
             input(id='inventoryIdInput')
           div(class='p-1')
             label(for='inventoryNameInput' class='mx-1') Inventory Name 

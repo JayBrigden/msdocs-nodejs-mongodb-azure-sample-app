@@ -7,5 +7,5 @@ inventorySelectBox.addEventListener('change', function(event) {
     document.getElementById('inventoryQuantityInput').value = currentInventoryRecord.Quantity;
     document.getElementById('inventorySupplierNameInput').value = currentInventoryRecord.SupplierName;
     document.getElementById('inventorySupplierContactInput').value = currentInventoryRecord.SupplierContact;
-    document.getElementById('inventoryExpirationDateInput').value = currentInventoryRecord.ExpirationDate.slice(0,9);
+    document.getElementById('inventoryExpirationDateInput').value = currentInventoryRecord.ExpirationDate.slice(0,10);
 });

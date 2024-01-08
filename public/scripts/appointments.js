@@ -6,7 +6,7 @@ appointmentSelectBox.addEventListener('change', function(event) {
         document.getElementById('appointmentPatientIdInput').value = currentAppointmentRecord.PatientID;
         document.getElementById('appointmentPatientNameInput').value = currentAppointmentRecord.PatientName;
         document.getElementById('appointmentDoctorIdInput').value = currentAppointmentRecord.DoctorID;
-        document.getElementById('appointmentDateInput').value = currentAppointmentRecord.AppointmentDate.slice(0,9);
+        document.getElementById('appointmentDateInput').value = currentAppointmentRecord.AppointmentDate.slice(0,10);
         document.getElementById('appointmentTimeInput').value = currentAppointmentRecord.Time;
         document.getElementById('appointmentPurposeInput').value = currentAppointmentRecord.Purpose;
         document.getElementById('appointmentNotesInput').value = currentAppointmentRecord.Notes;

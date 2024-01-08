@@ -4,7 +4,7 @@ patientSelectBox.addEventListener('change', function(event) {
     var currentPatientRecord = JSON.parse(patientSelectBox.options[patientSelectBox.selectedIndex].dataset.record);
     document.getElementById('patientIdInput').value = currentPatientRecord.PatientID;
     document.getElementById('patientNameInput').value = currentPatientRecord.PatientName;
-    document.getElementById('patientDobInput').value = currentPatientRecord.DateOfBirth.slice(0,9);
+    document.getElementById('patientDobInput').value = currentPatientRecord.DateOfBirth.slice(0,10);
     document.getElementById('patientHistoryInput').value = currentPatientRecord.MedicalHistory;
     document.getElementById('patientMedicationInput').value = currentPatientRecord.CurrentMedication;
     document.getElementById('patientContact1NameInput').value = currentPatientRecord.EmergencyContact1Name;
