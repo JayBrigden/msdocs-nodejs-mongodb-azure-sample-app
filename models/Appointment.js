@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const AppointmentSchema = new mongoose.schema({ 
-    AppointmentID: String, 
+    AppointmentID: String,
+    PatientName: String, 
     PatientID: String, 
     DoctorID: String,
     AppointmentDate: Date, 
