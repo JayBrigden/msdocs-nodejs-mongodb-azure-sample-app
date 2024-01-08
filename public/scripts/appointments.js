@@ -1,12 +1,33 @@
 var appointmentSelectBox = document.getElementById('appointmentSelectBox');
 const appointmentPurposeData = [];
+var ctx = document.getElementById("appointmentChart").getContext('2d');
 
 document.addEventListener('DOMContentLoaded', function() {
         for (var i = 0; i < appointmentSelectBox.length; i++){
                 appointmentPurposeData.push(JSON.parse(appointmentSelectBox.options[i].dataset.record).Purpose);
         }
-        console.log(appointmentPurposeData);
-    }, false);
+}, false);
+
+var chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+                labels: Array.from(new Set(appointmentPurposeData)),
+                datasets: [{
+                        label: 'Appointment Purposes',
+                        data: appointmentPurposeData,
+                        borderWidth: 1
+                }]
+        },
+        options: {
+                title: {
+                        display: true,
+                        text: "chart"
+                },
+                legend: {
+                        position: 'bottom'
+                }
+        }
+});
 
 appointmentSelectBox.addEventListener('change', function(event) {
         var currentAppointmentRecord = JSON.parse(appointmentSelectBox.options[appointmentSelectBox.selectedIndex].dataset.record);
