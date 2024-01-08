@@ -8,9 +8,9 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   Promise.all([Patient.find(),Appointment.find(),Billing.find(),Inventory.find()])
-    .then(([patients,appointments,billings,inventorys]) => {
+    .then((collections) => {
 
-      res.render('index', { PatientRecords: patients, AppointmentRecords: appointments, BillingRecords: billings, InventoryRecords: inventorys });
+      res.render('index', { PatientRecords: collections[0], AppointmentRecords: collections[1], BillingRecords: collections[2], InventoryRecords: collections[3] });
     })
     .catch((err) => {
       console.log(err);
