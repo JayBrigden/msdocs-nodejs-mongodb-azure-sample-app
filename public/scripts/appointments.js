@@ -10,7 +10,6 @@ appointmentSelectBox.addEventListener('change', function(event) {
         document.getElementById('appointmentTimeInput').value = currentAppointmentRecord.Time;
         document.getElementById('appointmentPurposeInput').value = currentAppointmentRecord.Purpose;
         document.getElementById('appointmentNotesInput').value = currentAppointmentRecord.Notes;
-
 });
 
     // Copy code above
