@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const AppointmentSchema = new mongoose.schema({ 
+const AppointmentSchema = new mongoose.Schema({ 
     AppointmentID: String,
     PatientName: String, 
     PatientID: String, 

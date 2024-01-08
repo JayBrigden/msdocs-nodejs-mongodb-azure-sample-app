@@ -2,5 +2,34 @@ extends index
 
 block content
 
-    each AppointmentRecord in AppointmentRecords 
-      p #{AppointmentRecord.PatientName}
+    div(class='d-flex my-2')
+        select(id='appointmentSelectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
+          each AppointmentRecord in AppointmentRecords
+           option(data-record=AppointmentRecord) #{AppointmentRecord.PatientName}
+        div(class='col p-2 mx-1 border rounded shadow-sm')
+          div(class='p-1')
+            label(for='appointmentIdInput' class='mx-1') Appointment ID 
+            input(id='appointmentIdInput')
+          div(class='p-1')
+            label(for='appointmentPatientIdInput' class='mx-1') Patient ID
+            input(id='appointmentPatientIdInput')
+          div(class='p-1')
+            label(for='appointmentPatientNameInput' class='mx-1') Patient Name 
+            input(id='appointmentPatientNameInput')
+          div(class='p-1')
+            label(for='appointmentDoctorIdInput' class='mx-1') Doctor ID 
+            input(id='appointmentDoctorIdInput')
+          div(class='p-1')
+            label(for='appointmentDateInput' class='mx-1') Date 
+            input(id='appointmentDateInput' type='date')
+          div(class='p-1')
+            label(for='appointmentTimeInput' class='mx-1') Time
+            input(id='appointmentTimeInput')
+          div(class='p-1')
+            label(for='appointmentPurposeInput' class='mx-1') Appointment Purpose
+            input(id='appointmentPurposeInput')
+          div(class='p-1')
+            label(for='appointmentNotesInput' class='mx-1') Patient Notes 
+            input(id='appointmentNotesInput')
+        
+    script(src='/scripts/appointments.js')
