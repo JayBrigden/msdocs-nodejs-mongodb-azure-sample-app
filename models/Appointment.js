@@ -1,4 +1,4 @@
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 
 const AppointmentSchema = new mongoose.schema({ 
     AppointmentID: String, 
@@ -10,4 +10,4 @@ const AppointmentSchema = new mongoose.schema({
     Notes: String
 });
 
-module.export = mongoose.model('AppointmentRecords', AppointmentSchema);
+module.export = mongoose.model('Appointment', AppointmentSchema);

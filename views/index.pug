@@ -11,18 +11,20 @@ html
          h1(class='h3 mb-0 text-white lh-1') Healthway Hospital Records
         div(class='col-md-auto 1h-1')
          small(class='text-white') Dr. Brigden
-      div(class='d-flex align-items-center my-1 bg-light-forest-green rounded shadow-sm')
-        div(class='col-md-auto px-2')
-          p(class='my-3 text-white') Patients
-        div(class='col-md-auto px-2')
-          p(class='my-3 text-white') Appointments
-        div(class='col-md-auto px-2')
-          p(class='my-3 text-white') Inventory
+      div(class='d-flex align-items-center my-1 px-2 bg-light-forest-green rounded shadow-sm')
+        div(class='col-md-auto')
+          button(id='patientBtn' class='py-2') Patients
+        div(class='col-md-auto')
+            button(id='appointmentBtn' class='py-2') Appointments
+        div(class='col-md-auto')
+            button(id='inventoryBtn' class='py-2') Inventory
+        div(class='col-md-auto')
+            button(id='billingBtn' class='py-2') Billing
       div(class='d-flex my-2')
-        select(id='selectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
+        select(id='patientSelectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
           each PatientRecord in PatientRecords
            option(data-record=PatientRecord) #{PatientRecord.PatientName}
-        div(Class='col p-2 mx-1 border rounded shadow-sm' style='height:300px;')
+        div(class='col p-2 mx-1 border rounded shadow-sm')
           div(class='p-1')
             label(for='patientIdInput' class='mx-1') Patient ID 
             input(id='patientIdInput')
