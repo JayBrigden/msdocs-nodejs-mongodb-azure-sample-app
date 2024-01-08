@@ -4,7 +4,7 @@ block content
 
     div(class='d-flex my-2')
         select(id='inventorySelectBox' class='col p-2 mx-1 form select shadow-sm' size='2')
-          each inventoryRecord in inventoryRecords
+          each InventoryRecord in InventoryRecords
            option(data-record=inventoryRecord) #{inventoryRecord.PatientName}
         div(class='col p-2 mx-1 border rounded shadow-sm')
           div(class='p-1')
