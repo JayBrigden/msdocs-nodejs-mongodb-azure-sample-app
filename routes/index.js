@@ -34,8 +34,8 @@ router.get('/appointments', function(req, res, next) {
 
 router.get('/inventory', function(req, res, next) {
   Inventory.find()
-    .then((inventory) => {
-      res.render('inventory', { InventoryRecords: inventory });
+    .then((inventorys) => {
+      res.render('inventory', { InventoryRecords: inventorys });
     })
     .catch((err) => {
       console.log(err);
