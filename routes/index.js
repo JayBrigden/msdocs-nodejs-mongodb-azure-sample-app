@@ -1,6 +1,6 @@
 var express = require('express');
 var Patient = require('../models/Patient');
-//var Appointment = require('../models/Appointment');
+var Appointment = require('../models/Appointment');
 var Billing = require('../models/Billing');
 
 var router = express.Router();
@@ -20,7 +20,7 @@ router.get('/patients', function(req, res, next) {
     });
 });
 
-/*router.get('/appointments', function(req, res, next) {
+router.get('/appointments', function(req, res, next) {
   Appointment.find()
     .then((appointments) => {
       res.render('appointments', { AppointmentRecords: appointments });
@@ -29,7 +29,7 @@ router.get('/patients', function(req, res, next) {
       console.log(err);
       res.send('Sorry Something went wrong!');
     });
-});*/
+});
 
 router.get('/billing', function(req, res, next) {
   Billing.find()
