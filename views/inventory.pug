@@ -15,7 +15,7 @@ block content
             input(id='inventoryNameInput')
           div(class='p-1')
             label(for='inventoryQuantityInput' class='mx-1') Quantity 
-            input(id='inventoryQuantityInput' type='date')
+            input(id='inventoryQuantityInput')
           div(class='p-1')
             label(for='inventorySupplierNameInput' class='mx-1') Supplier Name 
             textarea(id='inventorySupplierNameInput' rows='3')
@@ -24,8 +24,8 @@ block content
             input(id='inventorySupplierContactInput')
           div(class='p-1')
             label(for='inventoryExpirationDateInput' class='mx-1') Expiration Date 
-            input(id='inventoryExpirationDateInput')
-    div(class='row')
+            input(id='inventoryExpirationDateInput' type='date')
+    div
       canvas(id='inventoryChart')
         
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js')
