@@ -1,6 +1,4 @@
 var appointmentSelectBox = document.getElementById('appointmentSelectBox');
-var chartLabels = [];
-var chartData = [];
 var ctx = document.getElementById("appointmentChart").getContext('2d');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,51 +13,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 return tally;
         }, {});
 
-        chartLabels = Object.keys(appointmentPurposeTally);
-        chartData = Object.values(appointmentPurposeTally);
-}, false);
-
-var chart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-                labels: chartLabels,
-                datasets: [{
-                        label: 'Appointment Purposes',
-                        data: chartData,
-                        backgroundColor: [
-                                "#00eff3",
-                                "#ae37c2",
-                                "#bbed63",
-                                "#0042c7",
-                                "#ff980d",
-                                "#00a6ff",
-                                "#007100",
-                                "#ffabff",
-                                "#6f6900",
-                                "#7f56ac",
-                                "#00e4ff",
-                                "#7a0000",
-                                "#00dfff",
-                                "#640030",
-                                "#8ef0ff",
-                                "#411600",
-                                "#ff9293",
-                                "#3f4553",
-                                "#662245",
-                                "#95899e"
-                        ]
-                }]
-        },
-        options: {
-                title: {
-                        display: true,
-                        text: "Appointment Purposes"
+        var chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                        labels: Object.keys(appointmentPurposeTally),
+                        datasets: [{
+                                label: 'Appointment Purposes',
+                                data: Object.values(appointmentPurposeTally),
+                                backgroundColor: [
+                                        "#00eff3",
+                                        "#ae37c2",
+                                        "#bbed63",
+                                        "#0042c7",
+                                        "#ff980d",
+                                        "#00a6ff",
+                                        "#007100",
+                                        "#ffabff",
+                                        "#6f6900",
+                                        "#7f56ac",
+                                        "#00e4ff",
+                                        "#7a0000",
+                                        "#00dfff",
+                                        "#640030",
+                                        "#8ef0ff",
+                                        "#411600",
+                                        "#ff9293",
+                                        "#3f4553",
+                                        "#662245",
+                                        "#95899e"
+                                ]
+                        }]
                 },
-                legend: {
-                        position: 'right'
+                options: {
+                        title: {
+                                display: true,
+                                text: "Appointment Purposes"
+                        },
+                        legend: {
+                                position: 'right'
+                        }
                 }
-        }
-});
+        });
+}, false);
 
 appointmentSelectBox.addEventListener('change', function(event) {
         var currentAppointmentRecord = JSON.parse(appointmentSelectBox.options[appointmentSelectBox.selectedIndex].dataset.record);
