@@ -1,26 +1,31 @@
 var appointmentSelectBox = document.getElementById('appointmentSelectBox');
-const appointmentPurposeData = [];
-const appointmentPurposeTally = Object.create();
+const chartLabels = [];
+const chartData = [];
 var ctx = document.getElementById("appointmentChart").getContext('2d');
 
 document.addEventListener('DOMContentLoaded', function() {
+        const appointmentPurposeData = [];
+
         for (var i = 0; i < appointmentSelectBox.length; i++){
                 appointmentPurposeData.push(JSON.parse(appointmentSelectBox.options[i].dataset.record).Purpose);
         }
 
-        appointmentPurposeTally = appointmentPurposeData.reduce(function(tally, value){
+        const appointmentPurposeTally = appointmentPurposeData.reduce(function(tally, value){
                 tally[value] = tally[value] ? tally[value] + 1 : 1;
                 return tally;
         }, {});
+
+        chartLabels = Object.keys(appointmentPurposeTally);
+        chartData = Object.values(appointmentPurposeTally);
 }, false);
 
 var chart = new Chart(ctx, {
         type: 'pie',
         data: {
-                labels: Object.keys(appointmentPurposeTally),
+                labels: chartLabels,
                 datasets: [{
                         label: 'Appointment Purposes',
-                        data: Object.values(appointmentPurposeTally),
+                        data: chartData,
                         backgroundColor: [
                                 "#00eff3",
                                 "#ae37c2",
