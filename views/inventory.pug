@@ -25,5 +25,8 @@ block content
           div(class='p-1')
             label(for='inventoryExpirationDateInput' class='mx-1') Expiration Date 
             input(id='inventoryExpirationDateInput')
+    div(class='row')
+      canvas(id='inventoryChart')
         
-    script(src='/scripts/inventorys.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js')
+    script(src='/scripts/inventories.js')
