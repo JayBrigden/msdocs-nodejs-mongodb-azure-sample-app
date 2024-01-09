@@ -1,5 +1,6 @@
 var appointmentSelectBox = document.getElementById('appointmentSelectBox');
 const appointmentPurposeData = [];
+const appointmentPurposeTally = Object.create();
 var ctx = document.getElementById("appointmentChart").getContext('2d');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 appointmentPurposeData.push(JSON.parse(appointmentSelectBox.options[i].dataset.record).Purpose);
         }
 
-        const appointmentPurposeTally = appointmentPurposeData.reduce(function(tally, value){
+        appointmentPurposeTally = appointmentPurposeData.reduce(function(tally, value){
                 tally[value] = tally[value] ? tally[value] + 1 : 1;
                 return tally;
         }, {});
