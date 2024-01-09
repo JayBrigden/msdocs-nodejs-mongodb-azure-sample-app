@@ -1,6 +1,6 @@
 var appointmentSelectBox = document.getElementById('appointmentSelectBox');
-const chartLabels = [];
-const chartData = [];
+var chartLabels = [];
+var chartData = [];
 var ctx = document.getElementById("appointmentChart").getContext('2d');
 
 document.addEventListener('DOMContentLoaded', function() {
